@@ -1,0 +1,38 @@
+
+<single-spa-router mode="hash">
+  <!--
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+  -->
+
+  <!-- Example layouts you might find helpful:
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+  -->
+
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <a class="nav-link active" id ="companies" onclick="document.getElementById('companies').classList.add('active'); document.getElementById('customers').classList.remove('active');" aria-current="page" href="/#/">Companies</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id = "customers" onclick="document.getElementById('customers').classList.add('active'); document.getElementById('companies').classList.remove('active');" href="/#/vue2">Customers</a>
+    </li>
+  </ul>
+  
+  
+  <main>
+    <route path="vue2">
+      <application name="@app/vue2-app"></application>
+    </route>
+    <route default>
+      <application name="@app/vue3-app"></application>
+    </route>
+  </main>
+</single-spa-router>
+
+
+
